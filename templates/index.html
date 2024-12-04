@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.12.14/full.min.css" integrity="sha512-1LwcKb0Jnbuxvph+2T96XlF7XvoSWQhxZpheQyeZlECERX8VwYqP9Oeo1m0BMekRGLKfCv4+NgVeJOh14hiccg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/static/index.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+  <script src="/static/index.js"></script>
+  <title>Project</title>
+</head>
+
+<body id="main" class="">
+  <div id="logo" class="bg-red-300 outline outline-black">
+    {{ something_here }}
+  </div>
+
+  <nav id="nav" class="bg-green-300 outline outline-black">
+
+  </nav>
+
+  <aside id="aside" class="bg-blue-300 outline outline-black">
+
+  </aside>
+
+  <main id="content" class="bg-blue-300 outline outline-black">
+    <div class="overflow-x-auto">
+      <table class="table table-xs">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Job</th>
+            <th>company</th>
+            <th>location</th>
+            <th>Last Login</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for person in people %}
+          <tr>
+            <th>{{ person.id }}</th>
+            <td>{{ person.name }}</td>
+            <td>{{ person.job }}</td>
+            <td>{{ person.company }}</td>
+            <td>{{ person.location }}</td>
+            <td>{{ person.dob }}</td>
+            <td>{{ person.favorite_color }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Job</th>
+            <th>company</th>
+            <th>location</th>
+            <th>Last Login</th>
+            <th>Favorite Color</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </main>
+
+  <div id="status" class="bg-yellow-400 outline outline-black">
+    {% for todo in todos %}
+    {{ todo["id"] }}
+    {{ todo["userId"] }}
+    {{ todo["completed"] }}
+    {% endfor %}
+  </div>
+
+  <footer id="footer" class="bg-indigo-600 outline outline-black">
+
+  </footer>
+
+</body>
+
+</html>
